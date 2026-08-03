@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسویه‌حساب | نی نی نیرو</title>
+<meta name="description" content="تکمیل اطلاعات ارسال و پرداخت سفارش در فروشگاه نی نی نیرو.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.nininiro.ir">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-icon.webp" alt="نی نی نیرو" width="46" height="46" loading="eager">
+      <div class="brand-text">
+        <span class="brand-fa">نی نی نیرو</span>
+        <span class="brand-en">NININIRO</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="category.html">بادی نوزاد</a>
+      <a href="category.html">لباس دخترانه</a>
+      <a href="category.html">لباس پسرانه</a>
+      <a href="category.html">سیسمونی</a>
+      <a href="index.html#blog">وبلاگ</a>
+      <a href="index.html#footer">درباره ما</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="جستجو">🔍</button>
+      <button class="icon-btn" aria-label="سبد خرید">🛒</button>
+      <button class="icon-btn nav-toggle" aria-label="باز کردن منو" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">خانه</a><span>/</span>
+    <span>تسویه‌حساب</span>
+  </nav>
+  <h1 style="font-family:var(--font-display); font-size:22px; margin:6px 0 20px;">تسویه‌حساب</h1>
+</div>
+
+<section class="section" style="padding-top:10px;">
+  <div class="container checkout-layout">
+    <div class="checkout-card">
+      <h2>اطلاعات ارسال</h2>
+      <p class="form-error" id="checkout-error"></p>
+      <form id="checkout-form">
+        <div class="form-field">
+          <label for="cf-name">نام و نام خانوادگی</label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-phone">شماره تماس</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="09xxxxxxxxx" pattern="09[0-9]{9}" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-address">آدرس کامل</label>
+          <textarea id="cf-address" name="address" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;" id="checkout-submit">
+          ادامه به درگاه پرداخت
+        </button>
+      </form>
+    </div>
+
+    <div class="checkout-card">
+      <h2>خلاصه‌ی سفارش</h2>
+      <div id="checkout-summary-items">
+        <p style="color:var(--ink-soft);font-size:14px;">در حال بارگذاری سبد خرید...</p>
+      </div>
+      <div class="checkout-summary-total">
+        <span>جمع کل</span>
+        <span id="checkout-summary-total">۰ تومان</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo-icon.webp" alt="نی نی نیرو" width="38" height="38" loading="lazy">
+          <span>نی نی نیرو</span>
+        </div>
+        <p style="font-size:13.5px;line-height:1.9;">متخصص لباس‌های راحت و سالم برای پوست حساس نوزاد.</p>
+      </div>
+      <div class="footer-col">
+        <h5>دسته‌بندی‌ها</h5>
+        <a href="category.html">بادی نوزاد</a>
+        <a href="category.html">لباس دخترانه</a>
+        <a href="category.html">لباس پسرانه</a>
+        <a href="category.html">سیسمونی</a>
+      </div>
+      <div class="footer-col">
+        <h5>خدمات مشتریان</h5>
+        <a href="#">راهنمای سایز</a>
+        <a href="#">شرایط مرجوعی</a>
+        <a href="#">پیگیری سفارش</a>
+        <a href="#">سوالات متداول</a>
+      </div>
+      <div class="footer-col">
+        <h5>ارتباط با ما</h5>
+        <a href="#">اینستاگرام</a>
+        <a href="#">تلفن پشتیبانی</a>
+        <a href="#">ایمیل</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© ۱۴۰۴ نی نی نیرو. تمامی حقوق محفوظ است.</span>
+      <span>ساخته‌شده با 🤍 برای کوچولوها</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  (async () => {
+    const itemsEl = document.getElementById('checkout-summary-items');
+    const totalEl = document.getElementById('checkout-summary-total');
+    const submitBtn = document.getElementById('checkout-submit');
+
+    // خلاصه سفارش را مستقیم از /cart با همان توکنی که cart.js نگه می‌دارد می‌گیریم
+    try {
+      const token = localStorage.getItem('nnr_cart_token') || '';
+      if (!token) {
+        itemsEl.innerHTML = '<p style="color:var(--ink-soft);font-size:14px;">سبد خرید شما خالی است.</p>';
+        submitBtn.disabled = true;
+      } else {
+        const res = await fetch(`${NNR_API_BASE}/cart`, { headers: { 'X-Cart-Token': token } });
+        const data = await res.json();
+        if (!data.items || !data.items.length) {
+          itemsEl.innerHTML = '<p style="color:var(--ink-soft);font-size:14px;">سبد خرید شما خالی است.</p>';
+          submitBtn.disabled = true;
+        } else {
+          itemsEl.innerHTML = data.items.map(i => `
+            <div class="checkout-summary-item">
+              <span>${i.title} × ${i.quantity}</span>
+              <span>${NNR.formatToman(i.price * i.quantity)}</span>
+            </div>
+          `).join('');
+          totalEl.textContent = NNR.formatToman(data.total);
+        }
+      }
+    } catch (e) {
+      itemsEl.innerHTML = '<p style="color:var(--ink-soft);font-size:14px;">خطا در بارگذاری سبد خرید.</p>';
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('checkout-error');
+      errorEl.classList.remove('show');
+
+      const phone = document.getElementById('cf-phone').value.trim();
+      if (!/^09\d{9}$/.test(phone)) {
+        errorEl.textContent = 'شماره موبایل معتبر نیست (فرمت صحیح: 09xxxxxxxxx)';
+        errorEl.classList.add('show');
+        return;
+      }
+
+      // جلوگیری از دوبار زدن دکمه هنگام اتصال به درگاه (سمت سرور هم پوشش داده شده)
+      if (submitBtn.disabled) return;
+      submitBtn.disabled = true;
+      const original = submitBtn.textContent;
+      submitBtn.textContent = 'در حال انتقال به درگاه...';
+
+      try {
+        const result = await NNR.checkout({
+          name: document.getElementById('cf-name').value,
+          phone,
+          address: document.getElementById('cf-address').value,
+        });
+        window.location.href = result.redirect_url;
+        // عمداً submitBtn را دوباره فعال نمی‌کنیم؛ کاربر در حال ریدایرکت‌شدن به درگاه است
+      } catch (err) {
+        errorEl.textContent = err.message;
+        errorEl.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
