@@ -58,4 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // گالری تصاویر محصول — کلیک روی هر thumbnail، caption را عوض می‌کند
+  // (فعلاً هر ۴ thumbnail یک آیکون یکسان دارند تا عکس واقعی جایگزین شود؛
+  // caption مشخص می‌کند هر جایگاه قرار است چه زاویه‌ای از عکاسی واقعی باشد)
+  const galleryCaption = document.getElementById('pd-gallery-caption');
+  const galleryThumbs = document.getElementById('pd-thumbs');
+  if (galleryCaption && galleryThumbs) {
+    galleryThumbs.querySelectorAll('div').forEach(thumb => {
+      thumb.setAttribute('role', 'button');
+      thumb.setAttribute('tabindex', '0');
+      thumb.setAttribute('aria-label', thumb.dataset.label || 'تصویر محصول');
+
+      const activate = () => {
+        galleryThumbs.querySelectorAll('div').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        galleryCaption.textContent = thumb.dataset.label || '';
+      };
+
+      thumb.addEventListener('click', activate);
+      thumb.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
+    });
+  }
 });
