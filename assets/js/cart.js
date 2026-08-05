@@ -1,7 +1,6 @@
 // نی نی نی رو — اتصال سبد خرید به بک‌اند (nininiro-api)
 //
-// ⚠️ قبل از انتشار: این آدرس را با آدرس واقعی API که هاست کردی جایگزین کن.
-const NNR_API_BASE = 'https://api.nininiro.ir/api';
+const NNR_API_BASE = 'https://api.peyvandamn.ir/api';
 
 const NNR = (() => {
   const TOKEN_KEY = 'nnr_cart_token';
