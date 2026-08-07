@@ -127,9 +127,9 @@
       </div>
       <div class="footer-col">
         <h5>ارتباط با ما</h5>
-        <a href="#">اینستاگرام</a>
-        <a href="#">تلفن پشتیبانی</a>
-        <a href="#">ایمیل</a>
+        <span class="footer-placeholder">اینستاگرام: به‌زودی</span>
+        <span class="footer-placeholder">تلفن پشتیبانی: به‌زودی</span>
+        <span class="footer-placeholder">ایمیل: به‌زودی</span>
       </div>
     </div>
     <div class="footer-bottom">
@@ -186,11 +186,11 @@
       resultEl.innerHTML = `
         <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
           <span style="color:var(--ink-soft); font-size:13px;">کد سفارش</span>
-          <strong>${o.order_code}</strong>
+          <strong>${NNR.escapeHTML(o.order_code)}</strong>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
           <span style="color:var(--ink-soft); font-size:13px;">وضعیت</span>
-          <strong>${STATUS_LABELS[o.status] || o.status}</strong>
+          <strong>${NNR.escapeHTML(STATUS_LABELS[o.status] || o.status)}</strong>
         </div>
         <div style="display:flex; justify-content:space-between;">
           <span style="color:var(--ink-soft); font-size:13px;">مبلغ</span>

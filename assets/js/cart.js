@@ -83,6 +83,15 @@ const NNR = (() => {
     return new Intl.NumberFormat('fa-IR').format(n) + ' تومان';
   }
 
+  function escapeHTML(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   // ---------- رابط کاربری سبد خرید (drawer) ----------
 
   function buildDrawer() {
@@ -151,15 +160,15 @@ const NNR = (() => {
     checkoutBtn.removeAttribute('aria-disabled');
 
     body.innerHTML = items.map(item => `
-      <div class="nnr-cart-item" data-variant-id="${item.variant_id}">
+      <div class="nnr-cart-item" data-variant-id="${Number(item.variant_id) || 0}">
         <div class="nnr-cart-item-info">
-          <span class="nnr-cart-item-title">${item.title}</span>
-          <span class="nnr-cart-item-variant">${[item.size, item.color].filter(Boolean).join('، ')}</span>
+          <span class="nnr-cart-item-title">${escapeHTML(item.title)}</span>
+          <span class="nnr-cart-item-variant">${escapeHTML([item.size, item.color].filter(Boolean).join('، '))}</span>
           <span class="nnr-cart-item-price">${formatToman(item.price)}</span>
         </div>
         <div class="nnr-cart-item-qty">
           <button class="nnr-qty-btn" data-action="dec">−</button>
-          <span>${item.quantity}</span>
+          <span>${Number(item.quantity) || 0}</span>
           <button class="nnr-qty-btn" data-action="inc">+</button>
         </div>
       </div>
@@ -213,7 +222,7 @@ const NNR = (() => {
     fetchCart();
   }
 
-  return { init, addToCart, updateItem, fetchCart, checkout, formatToman, openDrawer, closeDrawer };
+  return { init, addToCart, updateItem, fetchCart, checkout, formatToman, escapeHTML, openDrawer, closeDrawer };
 })();
 
 document.addEventListener('DOMContentLoaded', () => NNR.init());

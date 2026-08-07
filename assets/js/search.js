@@ -55,12 +55,16 @@ const NNR_SEARCH = (() => {
         return;
       }
 
-      resultsEl.innerHTML = results.map(p => `
-        <a href="product.html" class="nnr-search-result">
-          <span>${p.title}</span>
+      resultsEl.innerHTML = results.map(p => {
+        const rawHref = p.url || p.path || (p.slug ? `product-${encodeURIComponent(p.slug)}.html` : 'product.html');
+        const href = /^(javascript|data):/i.test(String(rawHref).trim()) ? 'product.html' : rawHref;
+        return `
+        <a href="${NNR.escapeHTML(href)}" class="nnr-search-result">
+          <span>${NNR.escapeHTML(p.title)}</span>
           <span class="nnr-search-result-price">${NNR.formatToman(p.price)}</span>
         </a>
-      `).join('');
+      `;
+      }).join('');
     } catch (e) {
       resultsEl.innerHTML = '<p class="nnr-search-hint">خطا در جستجو، دوباره تلاش کنید</p>';
     }

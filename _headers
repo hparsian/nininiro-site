@@ -1,9 +1,9 @@
 # Cloudflare Pages این فایل را خودکار می‌خواند؛ نیازی به تنظیم دستی توی داشبورد نیست.
 # مستندات: https://developers.cloudflare.com/pages/configuration/headers/
 
-# --- کش طولانی‌مدت برای فایل‌های استاتیک (اسم فایل عوض بشه یعنی نسخه‌ی جدید، پس immutable امنه) ---
+# --- کش کوتاه برای فایل‌های استاتیک بدون hash در نام فایل؛ بعد از hashدار شدن می‌توان cache بلندمدت گذاشت ---
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=3600, must-revalidate
 
 # --- HTML: کش کوتاه، چون محتوا ممکنه به‌روزرسانی بشه ولی همچنان یه‌کم کش بگیره ---
 /*.html
