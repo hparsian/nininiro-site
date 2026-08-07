@@ -1,8 +1,6 @@
 /* ===========================================================
    نی نی نیرو — Design Tokens
    =========================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap');
-
 :root{
   /* --- palette, drawn from the logo: warm gold moon, cream sky, blush heart, sky-blue orb --- */
   --gold:        #C39A4B;
@@ -481,8 +479,9 @@ h1,h2,h3,h4{
 .footer-brand span{ font-family:var(--font-display); font-weight:700; color:#fff; font-size:17px; }
 .footer-brand span .brand-accent{ color:var(--gold-light); }
 .footer-col h5{ color:#fff; font-size:14.5px; margin-bottom:16px; }
-.footer-col a{ display:block; font-size:13.5px; margin-bottom:10px; color:rgba(255,255,255,0.72); transition:color .2s ease; }
+.footer-col a, .footer-col .footer-placeholder{ display:block; font-size:13.5px; margin-bottom:10px; color:rgba(255,255,255,0.72); transition:color .2s ease; }
 .footer-col a:hover{ color:var(--gold-light); }
+.footer-col .footer-placeholder{ cursor:default; color:rgba(255,255,255,0.56); }
 .footer-bottom{
   display:flex; justify-content:space-between; align-items:center;
   padding-top:22px; font-size:12.5px; color:rgba(255,255,255,0.55);

@@ -113,9 +113,9 @@
       </div>
       <div class="footer-col">
         <h5>ارتباط با ما</h5>
-        <a href="#">اینستاگرام</a>
-        <a href="#">تلفن پشتیبانی</a>
-        <a href="#">ایمیل</a>
+        <span class="footer-placeholder">اینستاگرام: به‌زودی</span>
+        <span class="footer-placeholder">تلفن پشتیبانی: به‌زودی</span>
+        <span class="footer-placeholder">ایمیل: به‌زودی</span>
       </div>
     </div>
     <div class="footer-bottom">
@@ -149,7 +149,7 @@
         } else {
           itemsEl.innerHTML = data.items.map(i => `
             <div class="checkout-summary-item">
-              <span>${i.title} × ${i.quantity}</span>
+              <span>${NNR.escapeHTML(i.title)} × ${NNR.escapeHTML(i.quantity)}</span>
               <span>${NNR.formatToman(i.price * i.quantity)}</span>
             </div>
           `).join('');
